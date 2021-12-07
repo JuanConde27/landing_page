@@ -39,10 +39,6 @@ body {
   height: 95px;
 }
 
-.header_nav ul {
-  display: flex;
-}
-
 .header_nav ul li {
   list-style: none; /*Eliminar puntos de lista*/
   margin-right: 35px; /*Eliminar margen a la derecha*/
@@ -67,7 +63,7 @@ body {
   padding: 3px 25px;
   border-radius: 20px; /*Redondear bordes*/
   border: 2px solid #a8a8b0;
-  width: 130px; /*Ancho*/
+  width: 200px; /*Ancho*/
 }
 
 .header_search i {
@@ -83,8 +79,6 @@ body {
 }
 
 .banner__info {
-  display: flex;
-  width: 50%;
   background-color: #232323;
   color: #fff;
   flex-direction: column; /*Alinear elementos vertical o horizontalmente*/
@@ -487,13 +481,10 @@ textarea::placeholder {
   }
 }
 
-@media (max-width: 850px) {
+@media (max-width: 990px) {
   .banner {
     flex-direction: column;
-    height: 136vh;
-  }
-  .banner__info {
-    width: 100%;
+    height: 120vh;
   }
   .banner_photo {
     height: 100vh;
