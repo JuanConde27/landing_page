@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
+@import "mixins.scss";
 
 body {
   font-family: "Poppins", sans-serif;
@@ -14,11 +15,16 @@ body {
   /*Margen interno*/
 }
 
+.border-none {
+  border: none;
+  outline: none;
+}
+
 .header_logo {
   div {
     height: 30px;
     width: 30px;
-    background-color: #a8a8b0;
+    background-color: map-get($colors, gray);
     margin-right: 10px;
 
     /*Separar icono de logo*/
@@ -43,7 +49,7 @@ body {
       text-decoration: none;
 
       /*Eliminar subrayado*/
-      color: #232323;
+      color: map-get($colors, semiblack);
     }
   }
 }
@@ -70,13 +76,13 @@ body {
     text-decoration: none;
 
     /*Eliminar subrayado*/
-    color: #232323;
+    color: map-get($colors, semiblack);
     font-weight: 600;
 
     /*Ancho/Grosor de la letra*/
 
     &:hover {
-      color: #b8b8b8;
+      color: map-get($colors, semigray);
     }
   }
 }
@@ -111,7 +117,7 @@ body {
 }
 
 .banner__info {
-  background-color: #232323;
+  background-color: map-get($colors, semiblack);
   color: #fff;
   flex-direction: column;
 
@@ -167,27 +173,14 @@ body {
 }
 
 .banner_photo {
-  background-image: url(../imagenes/banner.jpg);
-
-  /*Agregar una imagen de fondo y recibe la propiedad de url que es la ruta donde esta la imagen*/
-  background-repeat: no-repeat;
-
-  /*Es para que no se ripta la imagen*/
-  background-size: cover;
-
-  /*Tamaño de la imagen y la propioedad cover le indica que ocupe todo el espacio que tenga disponbile*/
-  background-position: center;
+  @include background(url(../imagenes/banner.jpg), center);
 
   /*Posición de la imagen*/
 }
 
 .imagen {
   height: 600px;
-  background-image: url(../imagenes/baner2.jpeg);
-
-  /*Agregar un/a imagen de fondo y recibe la propiedad de url que es la ruta donde esta la imagen*/
-  background-repeat: no-repeat;
-  background-size: cover;
+  @include background(url("../imagenes/baner2.jpeg"));
   background-position: top;
   display: flex;
   flex-direction: column;
@@ -220,16 +213,12 @@ body {
 }
 
 .logos {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include center;
 
   .logo {
     i {
       font-size: 115px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include center;
       margin-top: 45px;
       margin-bottom: 20px;
     }
@@ -245,15 +234,13 @@ body {
 }
 
 .body_imagen {
-  background-image: url(../imagenes/lauren-mancke-aOC7TSLb1o8-unsplash.jpg);
-  background-repeat: no-repeat;
-
-  /*Es para que no se ripta la imagen*/
-  background-size: cover;
+  @include background(
+    url(../imagenes/lauren-mancke-aOC7TSLb1o8-unsplash.jpg),
+    left
+  );
 
   /*Tamaño de la imagen y la propioedad cover le indica que ocupe todo el espacio que tenga disponbile*/
   border-radius: 0 15px 15px 0;
-  background-position: left;
 
   /*Posición de la imagen*/
   height: 320px;
@@ -301,15 +288,10 @@ body {
 }
 
 .body_imagen_2 {
-  background-image: url(../imagenes/stil-Mw9KxYkqsnk-unsplash.jpg);
-  background-repeat: no-repeat;
-
-  /*Es para que no se ripta la imagen*/
-  background-size: cover;
+  @include background(url(../imagenes/luca-bravo.jpg), right);
 
   /*Tamaño de la imagen y la propioedad cover le indica que ocupe todo el espacio que tenga disponbile*/
   border-radius: 15px 0px 0px 15px;
-  background-position: right;
 
   /*Posición de la imagen*/
   height: 300px;
@@ -319,20 +301,12 @@ body {
 }
 
 .custom_container {
-  background-image: url(../imagenes/luca-bravo.jpg);
+  @include background(url(../imagenes/luca-bravo.jpg));
+
   height: calc(100vh - 95px);
 
-  /*Calcular tamaño de la pantaña*/
-  background-repeat: no-repeat;
-
-  /*Es para que no se ripta la imagen*/
-  background-size: cover;
-  display: flex;
+  @include center;
   flex-direction: column;
-
-  /*Alinear en una columna*/
-  justify-content: center;
-  align-items: center;
 
   h2 {
     margin-bottom: 20px;
@@ -353,11 +327,10 @@ body {
   border-radius: 15px;
 
   input {
-    border: none;
+    @extend .border-none;
     resize: none;
 
     /*Controla la redimenion del textarea*/
-    outline: none;
 
     /*Eliminar linea-margen*/
     padding: 15px 0px;
@@ -368,11 +341,10 @@ body {
   }
 
   textarea {
-    border: none;
+    @extend .border-none;
     resize: none;
 
     /*Controla la redimenion del textarea*/
-    outline: none;
 
     /*Eliminar linea-margen*/
     padding: 15px 0px;
@@ -383,8 +355,7 @@ body {
   }
 
   button {
-    border: none;
-    outline: none;
+    @extend .border-none;
     padding: 15px;
     width: 30%;
     color: black;
@@ -408,15 +379,11 @@ body {
 
 .imagen_art {
   height: 600px;
-  background-image: url(../imagenes/florian-olivo-JNz9bQD3Oio-unsplash.jpg);
-
-  /*Agregar un/a imagen de fondo y recibe la propiedad de url que es la ruta donde esta la imagen*/
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: top;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  @include background(
+    url(../imagenes/florian-olivo-JNz9bQD3Oio-unsplash.jpg),
+    top
+  );
+  @include center;
   align-items: left;
   position: relative;
 
@@ -426,12 +393,12 @@ body {
     p {
       max-width: 700px;
       font-size: 20px;
-      color: white;
+      color: map-get($colors, white);
     }
 
     h1 {
       font-size: 45px;
-      color: white;
+      color: map-get($colors, white);
     }
   }
 
@@ -443,7 +410,7 @@ body {
     bottom: 0%;
     left: 50%;
     transform: translate(-50%, 0);
-    color: white;
+    color: map-get($colors, white);
   }
 }
 
@@ -451,9 +418,7 @@ body {
   padding: 50px 0;
 
   h1 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include center;
   }
 }
 
@@ -470,17 +435,13 @@ body {
   }
 
   p {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include center;
   }
 }
 
 .video {
-  display: flex;
-  justify-content: center;
+  @include center;
   flex-direction: column;
-  align-items: center;
 
   h3 {
     font-size: 30px;
@@ -514,19 +475,17 @@ body {
       figure {
         width: 100%;
         height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include center;
       }
 
       h2 {
-        color: #fff;
+        color: map-get($colors, white);
         margin-bottom: 25px;
         font-size: 18px;
       }
 
       p {
-        color: #fff;
+        color: map-get($colors, white);
         margin-bottom: 10px;
       }
     }
@@ -551,12 +510,12 @@ body {
 }
 
 .footer_2 small {
-  color: #fff;
+  color: map-get($colors, white);
   font-size: 12px;
 }
 
 .box figure h1 a {
-  color: #fff;
+  color: map-get($colors, white);
 }
 
 .header_nav-mobile {
@@ -659,13 +618,13 @@ body {
       height: 70px;
       border-radius: 50%;
     }
-    span{
+    span {
       max-width: 50%;
     }
   }
 }
 
-.subscriptions{
+.subscriptions {
   max-width: 90%;
   margin: 110px auto;
   margin-bottom: 0;

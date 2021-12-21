@@ -1,0 +1,22 @@
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin background($urlImage, $center: initial) {
+  background-image: $urlImage;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @if $center != initial {
+    background-position: $center;
+  }
+}
+
+$colors: (
+  gray: #a8a8b0,
+  semiblack: #232323,
+  white: #fff,
+  semigray: #b8b8b8,
+);

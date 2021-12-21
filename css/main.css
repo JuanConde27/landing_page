@@ -12,6 +12,11 @@ body {
   /*Margen interno*/
 }
 
+.border-none, .container_2 button, .container_2 textarea, .container_2 input {
+  border: none;
+  outline: none;
+}
+
 .header_logo {
   display: flex;
   /*Posicionar un elemento al lado de otro*/
@@ -136,19 +141,15 @@ body {
 
 .banner_photo {
   background-image: url(../imagenes/banner.jpg);
-  /*Agregar una imagen de fondo y recibe la propiedad de url que es la ruta donde esta la imagen*/
   background-repeat: no-repeat;
-  /*Es para que no se ripta la imagen*/
   background-size: cover;
-  /*Tamaño de la imagen y la propioedad cover le indica que ocupe todo el espacio que tenga disponbile*/
   background-position: center;
   /*Posición de la imagen*/
 }
 
 .imagen {
   height: 600px;
-  background-image: url(../imagenes/baner2.jpeg);
-  /*Agregar un/a imagen de fondo y recibe la propiedad de url que es la ruta donde esta la imagen*/
+  background-image: url("../imagenes/baner2.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top;
@@ -202,11 +203,10 @@ body {
 .body_imagen {
   background-image: url(../imagenes/lauren-mancke-aOC7TSLb1o8-unsplash.jpg);
   background-repeat: no-repeat;
-  /*Es para que no se ripta la imagen*/
   background-size: cover;
+  background-position: left;
   /*Tamaño de la imagen y la propioedad cover le indica que ocupe todo el espacio que tenga disponbile*/
   border-radius: 0 15px 15px 0;
-  background-position: left;
   /*Posición de la imagen*/
   height: 320px;
   width: 600px;
@@ -249,13 +249,12 @@ body {
 }
 
 .body_imagen_2 {
-  background-image: url(../imagenes/stil-Mw9KxYkqsnk-unsplash.jpg);
+  background-image: url(../imagenes/luca-bravo.jpg);
   background-repeat: no-repeat;
-  /*Es para que no se ripta la imagen*/
   background-size: cover;
+  background-position: right;
   /*Tamaño de la imagen y la propioedad cover le indica que ocupe todo el espacio que tenga disponbile*/
   border-radius: 15px 0px 0px 15px;
-  background-position: right;
   /*Posición de la imagen*/
   height: 300px;
   width: 1000px;
@@ -265,16 +264,13 @@ body {
 
 .custom_container {
   background-image: url(../imagenes/luca-bravo.jpg);
-  height: calc(100vh - 95px);
-  /*Calcular tamaño de la pantaña*/
   background-repeat: no-repeat;
-  /*Es para que no se ripta la imagen*/
   background-size: cover;
+  height: calc(100vh - 95px);
   display: flex;
-  flex-direction: column;
-  /*Alinear en una columna*/
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 .custom_container h2 {
   margin-bottom: 20px;
@@ -293,10 +289,8 @@ body {
   border-radius: 15px;
 }
 .container_2 input {
-  border: none;
   resize: none;
   /*Controla la redimenion del textarea*/
-  outline: none;
   /*Eliminar linea-margen*/
   padding: 15px 0px;
   width: 80%;
@@ -305,10 +299,8 @@ body {
   border-bottom: 1px solid black;
 }
 .container_2 textarea {
-  border: none;
   resize: none;
   /*Controla la redimenion del textarea*/
-  outline: none;
   /*Eliminar linea-margen*/
   padding: 15px 0px;
   width: 80%;
@@ -317,8 +309,6 @@ body {
   border-bottom: 1px solid black;
 }
 .container_2 button {
-  border: none;
-  outline: none;
   padding: 15px;
   width: 30%;
   color: black;
@@ -341,13 +331,12 @@ body {
 .imagen_art {
   height: 600px;
   background-image: url(../imagenes/florian-olivo-JNz9bQD3Oio-unsplash.jpg);
-  /*Agregar un/a imagen de fondo y recibe la propiedad de url que es la ruta donde esta la imagen*/
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top;
   display: flex;
-  flex-direction: column;
   justify-content: center;
+  align-items: center;
   align-items: left;
   position: relative;
 }
@@ -357,11 +346,11 @@ body {
 .imagen_art .info p {
   max-width: 700px;
   font-size: 20px;
-  color: white;
+  color: #fff;
 }
 .imagen_art .info h1 {
   font-size: 45px;
-  color: white;
+  color: #fff;
 }
 .imagen_art i {
   position: absolute;
@@ -371,7 +360,7 @@ body {
   bottom: 0%;
   left: 50%;
   transform: translate(-50%, 0);
-  color: white;
+  color: #fff;
 }
 
 .articulos {
@@ -402,8 +391,8 @@ body {
 .video {
   display: flex;
   justify-content: center;
-  flex-direction: column;
   align-items: center;
+  flex-direction: column;
 }
 .video h3 {
   font-size: 30px;
