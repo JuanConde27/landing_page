@@ -101,7 +101,7 @@ body {
 }
 
 .banner__info-general {
-  max-width: 700px;
+  max-width: 79%;
   /*Indicar ancho máximo*/
   margin: 0 auto;
 }
@@ -160,7 +160,10 @@ body {
   position: relative;
 }
 .imagen .info {
-  padding: 0 160px;
+  position: absolute;
+  top: 50%;
+  left: 8%;
+  transform: translate(0, -50%);
 }
 .imagen .info p {
   max-width: 700px;
@@ -179,6 +182,10 @@ body {
   transform: translate(-50%, 0);
 }
 
+.target__mobile {
+  display: none !important;
+}
+
 .logos {
   display: flex;
   justify-content: center;
@@ -194,7 +201,6 @@ body {
 }
 .logos .logo p {
   text-align: center;
-  max-width: 550px;
   display: flex;
   flex-direction: column;
   margin-bottom: 70px;
@@ -248,18 +254,14 @@ body {
   max-width: 800px;
 }
 
-.body_imagen_2 {
+.bg-2 {
   background-image: url(../imagenes/luca-bravo.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: right;
-  /*Tamaño de la imagen y la propioedad cover le indica que ocupe todo el espacio que tenga disponbile*/
-  border-radius: 15px 0px 0px 15px;
-  /*Posición de la imagen*/
-  height: 300px;
-  width: 1000px;
-  display: flex;
   justify-content: right;
+  border-radius: 15px 0px 0px 15px;
+  order: 2;
 }
 
 .custom_container {
@@ -281,7 +283,7 @@ body {
   flex-flow: column;
   /*Es para agrupor propiedades en una sola*/
   background-color: rgba(255, 255, 255, 0.699);
-  width: 30%;
+  width: 600px;
   height: 60%;
   padding: 20px;
   justify-content: center;
@@ -340,9 +342,6 @@ body {
   align-items: left;
   position: relative;
 }
-.imagen_art .info {
-  padding: 0 160px;
-}
 .imagen_art .info p {
   max-width: 700px;
   font-size: 20px;
@@ -400,6 +399,7 @@ body {
 }
 .video iframe {
   margin-bottom: 15px;
+  max-width: 100%;
 }
 
 .footer {
@@ -449,6 +449,56 @@ body {
   transition: all 300ms ease;
 }
 
+.mobile {
+  width: 100%;
+  height: 0px;
+  overflow: hidden;
+  transition: all ease-in-out 0.5s;
+}
+.mobile ul {
+  flex-direction: column;
+  padding: 5px 0;
+}
+.mobile ul li {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 5px 0;
+}
+.mobile ul li a {
+  text-decoration: none;
+  color: #000;
+}
+.mobile ul li a:focus {
+  color: #9e9e9e;
+}
+
+.hidden {
+  animation: close 1s ease-in-out;
+}
+
+.active {
+  display: block;
+  height: 100%;
+  animation: nav 1s ease-in;
+}
+
+@keyframes nav {
+  from {
+    height: 0px;
+  }
+  to {
+    height: 180px;
+  }
+}
+@keyframes close {
+  from {
+    height: 180px;
+  }
+  to {
+    height: 0px;
+  }
+}
 .footer_2 small {
   color: #fff;
   font-size: 12px;
@@ -461,8 +511,24 @@ body {
 .header_nav-mobile {
   display: none;
 }
+.header_nav-mobile button {
+  background-color: transparent;
+  border: none;
+}
 
 /* Media Queries */
+@media (max-width: 1250px) {
+  .testimoniales .user span {
+    max-width: 35% !important;
+  }
+}
+@media (max-width: 1000px) {
+  .absolute {
+    right: 0 !important;
+    left: 50%;
+    transform: translate(-50%, -3%) !important;
+  }
+}
 @media (max-width: 970px) {
   .header_nav,
 .header_search {
@@ -501,11 +567,65 @@ body {
   .footer .footer_1 {
     grid-gap: 13px;
   }
+
+  .testimoniales {
+    position: relative;
+    top: 270px;
+  }
+  .testimoniales .user {
+    flex-direction: column;
+  }
+  .testimoniales .user span {
+    max-width: none !important;
+    text-align: center;
+    margin: 0 !important;
+  }
+
+  .subscriptions {
+    margin-top: 300px !important;
+  }
+}
+@media (max-width: 750px) {
+  .text,
+.text_1 {
+    flex-direction: column;
+    margin-bottom: 30px;
+  }
+
+  .bg-2 {
+    order: 0;
+  }
+
+  .body_imagen {
+    width: 100%;
+  }
+
+  .text1 {
+    padding: 0px 18px;
+  }
+}
+@media (max-width: 730px) {
+  .banner__info-general p {
+    padding: 0 25px;
+  }
+}
+@media (max-width: 610px) {
+  .container_2 {
+    max-width: 95%;
+  }
+  .container_2 button {
+    width: 80%;
+  }
 }
 @media (max-width: 550px) {
   .footer .footer_1 {
     grid-template-columns: repeat(1, 1fr);
     text-align: center;
+  }
+}
+@media (max-width: 500px) {
+  .target {
+    width: 97% !important;
   }
 }
 .absolute {

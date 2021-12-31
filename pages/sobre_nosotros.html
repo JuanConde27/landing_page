@@ -46,28 +46,28 @@
           </li>
           <li>
             <!--Elementos que compone la lista-->
-            <a href="../pages/sobre_nosotros.html">Sobre Nosotros</a>
+            <a href="./sobre_nosotros.html">Sobre Nosotros</a>
             <!--Etiqueta de redireccion-->
           </li>
           <li>
             <!--Elementos que compone la lista-->
-            <a href="../pages/cursos.html">Cursos</a>
+            <a href="./cursos.html">Cursos</a>
             <!--Etiqueta de redireccion-->
           </li>
           <li>
             <!--Elementos que compone la lista-->
-            <a href="../pages/articulos.html">Articulos</a>
+            <a href="./articulos.html">Articulos</a>
             <!--Etiqueta de redireccion-->
           </li>
           <li>
             <!--Elementos que compone la lista-->
-            <a href="../pages/contato.html">Contacto</a>
+            <a href="./contato.html">Contacto</a>
             <!--Etiqueta de redireccion-->
           </li>
         </ul>
       </nav>
       <div class="header_nav-mobile">
-        <button type="button"><i class="fas fa-bars"></i></button>
+        <button type="button" id="button_nav"><i class="fas fa-bars"></i></button>
       </div>
       <div class="header_search">
         <i class="fas fa-search"></i>
@@ -75,6 +75,37 @@
         <!--Etiqueta de interaccion-->
       </div>
     </header>
+    <nav class="mobile" id="menu">
+      <!--Etiqueta de navegacion-->
+      <ul class="d-flex m-0">
+        <!--Lista no ordenada-->
+        <li>
+          <!--Elementos que compone la lista-->
+          <a href="../index.html">Home</a>
+          <!--Etiqueta de redireccion-->
+        </li>
+        <li>
+          <!--Elementos que compone la lista-->
+          <a href="./sobre_nosotros.html">Sobre Nosotros</a>
+          <!--Etiqueta de redireccion-->
+        </li>
+        <li>
+          <!--Elementos que compone la lista-->
+          <a href="./cursos.html">Cursos</a>
+          <!--Etiqueta de redireccion-->
+        </li>
+        <li>
+          <!--Elementos que compone la lista-->
+          <a href="./articulos.html">Articulos</a>
+          <!--Etiqueta de redireccion-->
+        </li>
+        <li>
+          <!--Elementos que compone la lista-->
+          <a href="./contato.html">Contacto</a>
+          <!--Etiqueta de redireccion-->
+        </li>
+      </ul>
+    </nav>
     <div class="imagen">
       <div class="info">
         <h1>SOBRE NOSOTROS</h1>
@@ -86,29 +117,34 @@
       <i class="fas fa-ellipsis-h"></i>
     </div>
     <div class="logos">
-      <div class="logo">
-        <i class="fas fa-user-friends"></i>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus
-          corporis officiis perspiciatis, maiores officia hic, facere optio
-          totam
-        </p>
-      </div>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="logo col-12 col-md-4">
+            <i class="fas fa-user-friends"></i>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus
+              corporis officiis perspiciatis, maiores officia hic, facere optio
+              totam
+            </p>
+          </div>
 
-      <div class="logo">
-        <i class="fas fa-hand-paper"></i>
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam rem
-          nam provident suscipit, recusandae vitae adipisci corrupti
-        </p>
-      </div>
+          <div class="logo col-12 col-md-4">
+            <i class="fas fa-hand-paper"></i>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam
+              rem nam provident suscipit, recusandae vitae adipisci corrupti
+            </p>
+          </div>
 
-      <div class="logo">
-        <i class="fas fa-star"></i>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio
-          aliquid pariatur, consequatur corporis quod illum eaque eos nulla?
-        </p>
+          <div class="logo col-12 col-md-4">
+            <i class="fas fa-star"></i>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Distinctio aliquid pariatur, consequatur corporis quod illum eaque
+              eos nulla?
+            </p>
+          </div>
+        </div>
       </div>
     </div>
     <div class="text">
@@ -123,8 +159,9 @@
         </p>
       </div>
     </div>
-    <div class="text_1">
-      <div class="text_2">
+    <div class="text">
+      <div class="body_imagen bg-2"></div>
+      <div class="text1">
         <h2>SOBRE NOSOTROS</h2>
         <p>
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur
@@ -133,7 +170,6 @@
           nihil! Vitae, unde?
         </p>
       </div>
-      <div class="body_imagen_2"></div>
     </div>
     <footer class="footer">
       <div class="footer_1">
@@ -170,5 +206,6 @@
         </small>
       </div>
     </footer>
+    <script src="../js/main.js"></script>
   </body>
 </html>
